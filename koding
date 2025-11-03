@@ -1,0 +1,58 @@
+System.out.println("=== 🧮 Program Penjumlahan Dua Matriks ===");
+        System.out.println("Syarat: Kedua matriks harus memiliki ordo (ukuran) yang sama.");
+        
+        System.out.print("\nMasukkan jumlah BARIS matriks: ");
+        int baris = scanner.nextInt();
+        
+        System.out.print("Masukkan jumlah KOLOM matriks: ");
+        int kolom = scanner.nextInt();
+
+        if (baris <= 0 || kolom <= 0) {
+            System.out.println("Ukuran baris dan kolom harus lebih dari 0!");
+        } else {
+            
+            int[][] matriksA = new int[baris][kolom];
+            int[][] matriksB = new int[baris][kolom];
+            int[][] matriksHasil = new int[baris][kolom]; // Untuk C = A + B
+
+            System.out.println("\n--- Masukkan Elemen Matriks A ---");
+            // Perulangan untuk setiap baris (i)
+            for (int i = 0; i < baris; i++) {
+                for (int j = 0; j < kolom; j++) {
+                    System.out.print("Elemen A[" + i + "][" + j + "]: ");
+                    matriksA[i][j] = scanner.nextInt();
+                }
+            }
+
+            System.out.println("\n--- Masukkan Elemen Matriks B ---");
+            for (int i = 0; i < baris; i++) {
+                for (int j = 0; j < kolom; j++) {
+                    System.out.print("Elemen B[" + i + "][" + j + "]: ");
+                    matriksB[i][j] = scanner.nextInt();
+                }
+            }
+
+           
+            for (int i = 0; i < baris; i++) {
+                for (int j = 0; j < kolom; j++) {
+                    matriksHasil[i][j] = matriksA[i][j] + matriksB[i][j];
+                }
+            }
+
+            // 8. Menampilkan Matriks Hasil (C)
+            System.out.println("\n--- Hasil Penjumlahan Matriks (A + B) ---");
+            for (int i = 0; i < baris; i++) {
+                for (int j = 0; j < kolom; j++) {
+                 
+                    System.out.print(matriksHasil[i][j] + "\t");
+                }
+                System.out.println();
+            }
+        }
+        
+        
+        
+        
+        
+        
+        scanner.close();
